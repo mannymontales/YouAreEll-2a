@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import models.Id;
 import views.IdTextView;
@@ -18,21 +19,6 @@ public class IdController {
     public IdController(TransactionController tt) {
         this.tctrl = tt;
     }
-    public ArrayList<Id> getIds() {
-        return null;
-    }
-
-    public Id postId(Id id) {
-        // create json from id
-        // call server, get json result Or error
-        // result json to Id obj
-
-        return null;
-    }
-
-    public Id putId(Id id) {
-        return null;
-    }
 
     public void doCommand(Command cmd) {
         if (cmd.getCmd() == Command.Verb.GETIDS) {
@@ -40,6 +26,18 @@ public class IdController {
             for (int i = 0; i < 10; i++) {
                 System.out.println(new IdTextView(ids.get(i)).toString());
             }
+        }
+
+        if (cmd.getCmd() == Command.Verb.POSTID){
+            Scanner sc = new Scanner(System.in);
+
+            String name = "manny ";
+            //sc.nextLine();
+
+            String ghname = "benji ";
+            //sc.nextLine();
+
+            tctrl.postId(name, ghname);
         }
     }
 }

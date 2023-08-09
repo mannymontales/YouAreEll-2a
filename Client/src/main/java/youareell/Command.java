@@ -107,15 +107,13 @@ public class Command {
     }
     public boolean isIdCmd() {
         // as you add ENUMs, add more to this condition.
-        if (this.currentCmd == Verb.POSTID
-        || this.currentCmd == Verb.GETIDS) return true;
+        if (this.currentCmd == Verb.POSTID || this.currentCmd == Verb.GETIDS) return true;
         return false;
     }
 
     public boolean isMsgCmd() {
         // as you add ENUMs, add more to this condition.
-        if (this.currentCmd == Verb.POSTMSG
-                || this.currentCmd == Verb.GETMESG) return true;
+        if (this.currentCmd == Verb.POSTMSG || this.currentCmd == Verb.GETMESG) return true;
         return false;
     }
 
